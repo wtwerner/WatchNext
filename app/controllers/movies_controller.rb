@@ -1,4 +1,5 @@
 class MoviesController < ApplicationController
+
     def index
         movies = Movie.all
         render json: MovieSerializer.new(movies)
@@ -9,10 +10,21 @@ class MoviesController < ApplicationController
         render json: MovieSerializer.new(movie)
     end
 
+    def destroy
+        movie = Movie.where(tmdb_id: params[:id]).take
+        Movie.destroy(movie.id)
+    end
+
+    def show
+        movie = Movie.where(tmdb_id: params[:id])
+        render json: MovieSerializer.new(movie)
+    end
+
     private
 
     def movie_params
         params.permit(
+            :id,
             :tmdb_id,
             :watched,
             :to_watch
