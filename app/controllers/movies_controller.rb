@@ -20,6 +20,11 @@ class MoviesController < ApplicationController
         render json: MovieSerializer.new(movie)
     end
 
+    def update
+        movie = Movie.where(tmdb_id: params[:id])
+        movie.update(movie_params)
+    end
+
     private
 
     def movie_params
