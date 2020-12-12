@@ -1,6 +1,6 @@
 class GenresController < ApplicationController
     def show
-        genre = MovieGenre.find_by(id: params[:id])
+        genre = Genre.find_by(id: params[:id])
         render json: genre
     end
 
