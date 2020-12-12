@@ -21,15 +21,7 @@ genres = {
 }
 
 genres.each do |genre, attributes| 
-    attributes.each do |key, val|
-        if key == "id"
-            id = val
-        elsif key == "name"
-            name = val
-        end
-        g = Genre.new
-        g.tmdb_id = id
-        g.name = name
-        g.save
-    end
+    id = attributes['id']
+    name = attributes['name']
+    Genre.create(tmdb_id: id, name: name)
 end
