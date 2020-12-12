@@ -23,10 +23,12 @@ ActiveRecord::Schema.define(version: 2020_12_12_190608) do
   end
 
   create_table "movie_genres", force: :cascade do |t|
-    t.integer "movie_id"
-    t.integer "genre_id"
+    t.bigint "movie_id"
+    t.bigint "genre_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["genre_id"], name: "index_movie_genres_on_genre_id"
+    t.index ["movie_id"], name: "index_movie_genres_on_movie_id"
   end
 
   create_table "movies", force: :cascade do |t|
@@ -37,4 +39,6 @@ ActiveRecord::Schema.define(version: 2020_12_12_190608) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  add_foreign_key "movie_genres", "genres"
+  add_foreign_key "movie_genres", "movies"
 end
