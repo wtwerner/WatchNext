@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :genres
   resources :movies
   delete "/movies/:tmdb_id", to: "movies#destroy"
   # post "/movies/:tmdb_id/watched", to: "movies#watched"
