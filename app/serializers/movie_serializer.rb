@@ -1,4 +1,4 @@
 class MovieSerializer
   include JSONAPI::Serializer
-  attributes :tmdb_id, :watched, :to_watch
+  attributes :tmdb_id, :watched, :to_watch, :genres
 end
