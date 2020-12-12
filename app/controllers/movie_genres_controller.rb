@@ -1,11 +1,19 @@
 class MovieGenresController < ApplicationController
     def show
         movie_genre = MovieGenre.find_by(id: params[:id])
-        render json: movie_genre
+        if movie_genre
+            render json: movie_genre.to_json(include: [:movie, :genre])
+        else
+            render json: { message: 'No movie_genre found with that id' }
+        end
     end
 
     def index
         movie_genres = MovieGenre.all
-        render json: movie_genres
+        if movie_genres
+            render json: movie_genres.to_json(include: [:movie, :genre])
+        else
+            render json: { message: 'No movie_genres found with that id' }
+        end
     end
 end
