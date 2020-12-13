@@ -38,7 +38,6 @@ ActiveRecord::Schema.define(version: 2020_12_12_190608) do
     t.string "release_date"
     t.integer "vote_average"
     t.integer "vote_count"
-    t.integer "runtime"
     t.integer "tmdb_id"
     t.boolean "watched"
     t.boolean "to_watch"
