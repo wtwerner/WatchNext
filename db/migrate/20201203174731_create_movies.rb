@@ -7,7 +7,6 @@ class CreateMovies < ActiveRecord::Migration[6.0]
       t.string :release_date
       t.integer :vote_average
       t.integer :vote_count
-      t.integer :runtime
       t.integer :tmdb_id
       t.boolean :watched
       t.boolean :to_watch
