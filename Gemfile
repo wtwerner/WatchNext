@@ -45,9 +45,3 @@ gem 'faker'
 gem 'jsonapi-serializer'
 
 gem 'pry'
-
-gem 'devise'
-
-gem 'devise-jwt'
-
-gem 'fast_jsonapi'
