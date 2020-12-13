@@ -33,7 +33,13 @@ class MoviesController < ApplicationController
             :id,
             :tmdb_id,
             :watched,
-            :to_watch
+            :to_watch,
+            :title,
+            :overview,
+            :poster_path,
+            :vote_average,
+            :vote_count,
+            :release_date,
         )
     end
 end
