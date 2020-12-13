@@ -1,4 +1,5 @@
 class MovieGenresController < ApplicationController
+    before_action :authenticate_user!
     def show
         movie_genre = MovieGenre.find_by(id: params[:id])
         if movie_genre
