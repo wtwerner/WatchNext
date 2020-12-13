@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_12_12_190608) do
+ActiveRecord::Schema.define(version: 2020_12_12_185422) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -18,17 +18,9 @@ ActiveRecord::Schema.define(version: 2020_12_12_190608) do
   create_table "genres", force: :cascade do |t|
     t.string "name"
     t.integer "tmdb_id"
+    t.integer "movie_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-  end
-
-  create_table "movie_genres", force: :cascade do |t|
-    t.bigint "movie_id"
-    t.bigint "genre_id"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.index ["genre_id"], name: "index_movie_genres_on_genre_id"
-    t.index ["movie_id"], name: "index_movie_genres_on_movie_id"
   end
 
   create_table "movies", force: :cascade do |t|
@@ -45,6 +37,4 @@ ActiveRecord::Schema.define(version: 2020_12_12_190608) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
-  add_foreign_key "movie_genres", "genres"
-  add_foreign_key "movie_genres", "movies"
 end

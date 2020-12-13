@@ -40,6 +40,7 @@ class MoviesController < ApplicationController
             :vote_average,
             :vote_count,
             :release_date,
+            :genres
         )
     end
 end
