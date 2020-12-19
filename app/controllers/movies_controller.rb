@@ -43,7 +43,7 @@ class MoviesController < ApplicationController
     end
 
     def update
-        movie = Movie.where(tmdb_id: params[:id])
+        movie = Movie.where(id: params[:id])
         movie.update(movie_params)
         render json: MovieSerializer.new(movie)
     end
