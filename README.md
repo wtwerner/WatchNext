@@ -6,7 +6,7 @@ WatchNext has a Javascript frontend and Rails backend and lets users search for 
 
 [WatchNext Frontend Repo](https://github.com/wtwerner/WatchNext_Frontend)
 
-[Watch this video to understand the basic functionality](https://www.youtube.com/watch?v=KBAYhbkEDSI)
+[Watch this video to understand the basic functionality](https://youtu.be/BW70FEs5dUk)
 
 ## Built With
 
